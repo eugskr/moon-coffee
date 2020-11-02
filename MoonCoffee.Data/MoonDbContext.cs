@@ -15,5 +15,12 @@ namespace MoonCoffee.Data
         }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<CustomerAddress> CustomerAdresses { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductInventory> ProductInventories { get; set; }
+        public DbSet<ProductInventorySnapshot> ProductInventorySnapshots { get; set; }
+        public DbSet<SalesOrder> SalesOrders { get; set; }
+        public DbSet<SalesOrderItem> SalesOrderItems { get; set; }
+      
+
     }
 }
