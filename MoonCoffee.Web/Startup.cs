@@ -13,6 +13,9 @@ using Microsoft.Extensions.Logging;
 using MoonCoffee.Data;
 using Microsoft.EntityFrameworkCore;
 using MoonCoffee.Services.Product;
+using MoonCoffee.Services.Inventory;
+using MoonCoffee.Services.Customer;
+using MoonCoffee.Services.Order;
 
 namespace MoonCoffee.Web
 {
@@ -34,7 +37,13 @@ namespace MoonCoffee.Web
                 options.EnableDetailedErrors();
                 options.UseNpgsql(Configuration.GetConnectionString("moon.dev"));
             });
-            services.AddTransient<IProductService, ProductService>(); 
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IInventoryService, InventoryService>();
+
+            services.AddTransient<ICustomerService, CustomerService>();
+
+            services.AddTransient<IOrderService, OrderService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

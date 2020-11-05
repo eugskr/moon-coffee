@@ -7,7 +7,7 @@ namespace MoonCoffee.Services.Product
 {
     public class ProductService : IProductService
     {
-        private MoonDbContext _db;
+        private readonly MoonDbContext _db;
         public ProductService(MoonDbContext db)
         {
             _db = db;
